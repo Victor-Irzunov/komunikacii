@@ -35,15 +35,13 @@ export const MenuMobil = ({ onClose }) => {
 			<nav className='text-center'>
 				<ul className='h-[50vh] flex flex-col justify-between items-center text-lg cursor-pointer'>
 					<li>
-						<LinkScroll to='main'
-							smooth={true}
-							offset={-100}
-							duration={800}
+						<Link to='/'
+							
 							className="cursor-pointer"
 							onClick={onClose}
 						>
 							Главная страница
-						</LinkScroll>
+						</Link>
 					</li>
 					{/* <li>
 						<LinkScroll to='service'
@@ -75,12 +73,12 @@ export const MenuMobil = ({ onClose }) => {
 					</li>
 					
 					<li>
-						<LinkScroll to='/uslugi/elektrofizicheskie-izmereniya'
+						<Link to='/uslugi/elektrofizicheskie-izmereniya'
 							className="cursor-pointer"
 							onClick={onClose}
 						>
 							Электрофизические измерения
-						</LinkScroll>
+						</Link>
 					</li>
 					<li>
 						<Link to='/uslugi/prokladka-i-remont-kabelya'
@@ -145,9 +143,6 @@ export const MenuMobil = ({ onClose }) => {
 					</li>
 
 				</ul>
-				<div className='absolute bottom-1'>
-					{/* <Image src={image} width='80%' /> */}
-				</div>
 			</nav>
 			<DrawerComp open={open} placement={placement} title={title} setOpen={setOpen} isActiveForm={isActiveForm} />
 		</div>
