@@ -139,7 +139,7 @@ export const FormDate = () => {
 				</Form.Item>
 			</Form>
 
-			<p className='text-gray-500'>20% скидка за предварительную запись.</p>
+			<p className='text-gray-500 font-light text-sm'>5% скидка за предварительную запись.</p>
 
 		</>
 	)

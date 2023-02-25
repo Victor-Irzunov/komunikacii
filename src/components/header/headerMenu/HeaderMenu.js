@@ -18,9 +18,9 @@ export const HeaderMenu = ({ isVisible }) => {
 		menu: false,
 	})
 	const screens = useScreens()
-
 	const [open, setOpen] = useState(false)
 
+	
 	const showDrawer = (position, title, str) => {
 		setOpen(true)
 		setPlacement(position)
@@ -148,11 +148,11 @@ export const HeaderMenu = ({ isVisible }) => {
 									initial={{ opacity: 0 }}
 									animate={{ opacity: 1 }}
 									exit={{ opacity: 0 }}
-									className={`pt-1 pb-1 bg-[#313846] shadow-xl fixed top-0 left-0 right-0 z-10`}
+									className={`pt-1 bg-[#313846] shadow-xl fixed top-0 left-0 right-0 z-10`}
 								>
 									<div className='flex justify-center items-center'>
 										<Link to='/'>
-											<Image src={logo} preview={false} width='220px' />
+											<Image src={logo} preview={false} width='180px' />
 										</Link>
 									</div>
 

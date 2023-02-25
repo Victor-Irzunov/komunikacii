@@ -13,7 +13,6 @@ export const SectionServiceMainPageComp = () => {
 	return (
 		<section
 			className='container mx-auto mt-20 mb-10'
-			// id='service'
 		>
 			{data.map((el, idx) => {
 				return (

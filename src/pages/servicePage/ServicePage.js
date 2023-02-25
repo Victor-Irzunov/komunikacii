@@ -1,17 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Divider, Image, Tag } from 'antd'
 import { InfoCircleTwoTone } from '@ant-design/icons'
 import { motion } from "framer-motion"
 import { titleAnimation, titleAnimation2, yAnimation } from '../../constants/animation/AnimationConst'
-import { dataTransformator, dataLinii,dataEfi,dataASKUE, dataKabel, dataAvaria } from '../../constants/service/ServiceConst'
+import {
+	dataTransformator, dataLinii,
+	dataEfi, dataASKUE, dataKabel, dataAvaria,
+	dataObsluzhivanie, dataPodklyuchenie, dataProektirovanie
+} from '../../constants/service/ServiceConst'
 import {
 	useLocation,
 } from 'react-router-dom'
 import hours from '../../images/service/24-hours.svg'
+import { ModalComp } from '../../components/modal/ModalComp'
 
 export const ServicePage = () => {
+	const [isModalOpen, setIsModalOpen] = useState(false)
+	const [title, setTitle] = useState('')
+	const showModal = (title) => {
+		setIsModalOpen(true)
+		setTitle(title)
+	 };
+  
+	 const handleCancel = () => {
+		setIsModalOpen(false)
+	 };
 	let data
 	let location = useLocation()
+
 
 	switch (location.pathname) {
 		case '/uslugi/transformatornaya-podstantsiya':
@@ -31,6 +47,15 @@ export const ServicePage = () => {
 			break
 		case '/uslugi/avariinaya-sluzhba':
 			data = dataAvaria
+			break
+		case '/uslugi/obsluzhivanie':
+			data = dataObsluzhivanie
+			break
+		case '/uslugi/podklyuchenie-elektrichestva':
+			data = dataPodklyuchenie
+			break
+		case '/uslugi/proektirovanie-elektrosnabzheniya':
+			data = dataProektirovanie
 			break
 	}
 
@@ -56,11 +81,11 @@ export const ServicePage = () => {
 										className='text-gray-700 '
 										variants={titleAnimation2}
 									>
-										{el.h2} {' '} 
+										{el.h2} {' '}
 										{/* <Image src={hours} style={{width:'25px', marginTop:'5px'}} /> */}
-								
+
 									</motion.h2>
-									
+
 								</motion.div>
 								<motion.div>
 									<Image
@@ -94,7 +119,10 @@ export const ServicePage = () => {
 										<p className='text-xs text-gray-600 font-light'>
 											<InfoCircleTwoTone /> Стоимость и сроки Вы можете узнать позвонив по телефону +375 (29) 000-00-00 либо отправив нам сообщение (кнопка ниже). Выполняем работы как под ключ так и частями. Оплата производится двумя способами: наличным и безналичным способам (с заключением договора).
 										</p>
-										<Tag color="green">
+										<Tag
+											color="green"
+											onClick={() => showModal('Стоимость и сроки')}
+										>
 											узнать стоимость и сроки
 										</Tag>
 
@@ -129,7 +157,51 @@ export const ServicePage = () => {
 												<p className='text-xs text-gray-600 font-light'>
 													<InfoCircleTwoTone /> Стоимость и сроки Вы можете узнать позвонив по телефону (указан выше) либо отправив нам сообщение (кнопка ниже). Выполняем работы как под ключ так и отдельными частями.
 												</p>
-												<Tag color="green">
+												<Tag
+													color="green"
+													onClick={() => showModal('Стоимость и сроки')}
+												>
+													узнать стоимость и сроки
+												</Tag>
+											</motion.div>
+										</motion.div>
+									</>
+									:
+									undefined
+								}
+								{el.list3 ?
+									<>
+										<Divider />
+										<motion.div
+											className='mt-10 overflow-hidden'
+											initial="hidden"
+											whileInView="visible"
+										>
+											<motion.div
+												variants={yAnimation}
+											>
+												<h3 className='font-medium text-lg tracking-wider'>
+													{el.h3_2}
+												</h3>
+												<ul className='font-light list-disc'>
+													{
+														el.list2.map((item, i) => {
+															return (
+																<li className='mb-1' key={i}>
+																	{item}
+																</li>
+															)
+														})
+													}
+												</ul>
+												<p className='text-xs text-gray-600 font-light'>
+													<InfoCircleTwoTone /> Стоимость и сроки Вы можете узнать позвонив по телефону (указан выше) либо отправив нам сообщение (кнопка ниже). Выполняем работы как под ключ так и отдельными частями.
+												</p>
+
+												<Tag
+													color="green"
+													onClick={() => showModal('Стоимость и сроки')}
+												>
 													узнать стоимость и сроки
 												</Tag>
 											</motion.div>
@@ -157,6 +229,7 @@ export const ServicePage = () => {
 				})
 			}
 
+			<ModalComp question={true} isModalOpen={isModalOpen} title={title} handleCancel={handleCancel} />
 		</section>
 	)
 }

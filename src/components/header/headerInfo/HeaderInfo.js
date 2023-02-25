@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Image, Button, Affix, Tooltip } from 'antd'
-import logo from '../../../images/logo/logo.png'
+import logo from '../../../images/logo/logo2.png'
 // import telegram from '../../../images/social-icon/telegram.svg'
 // import viber from '../../../images/social-icon/viber.svg'
 // import whatsapp from '../../../images/social-icon/WhatsApp.svg'
@@ -60,7 +60,7 @@ export const HeaderInfo = ({ setIsVisible }) => {
 						<motion.div
 							className='flex flex-col 
 						justify-between items-center
-						 text-[#05d3ac] pt-20 pb-3 
+						 text-[#05d3ac] pt-24 pb-3 
 						 relative z-10 bg-[#313846]'
 						 variants={yAnimation3}
 						>

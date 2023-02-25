@@ -76,11 +76,17 @@ export const FooterComp = () => {
             whileInView="visible"
             className='flex flex-col justify-between'
           >
+            <motion.p
+              variants={adressAnimation}
+              className='font-light'
+            >
+              Выполняем любые работы по строительству, обслуживанию и ремонту элекстрических установок и оборудования.
+            </motion.p>
             <motion.div
               variants={adressAnimation}
               className='flex justify-between items-center'>
-              <div className='text-base font-extralight'>
-                <p className='mb-3'>г.Минск, Минская 100</p>
+              <div className='text-lg font-extralight'>
+                <p className='mb-2'>г.Минск, Минская 100</p>
                 <p>contact.oo@mail.ru</p>
                 <a href='tel:8029'>+375 29 000-99-99</a>
               </div>
@@ -105,6 +111,6 @@ export const FooterComp = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </footer >
   )
 }

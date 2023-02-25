@@ -16,8 +16,8 @@ export const DrawerComp = ({ open, placement, setOpen, isActiveForm, title }) =>
 			onClose={onClose}
 			open={open}
 			key={placement}
-			className='bg-[#313846]'
-			style={{background:'#313846'}}
+			// className='bg-[#313846]'
+			// style={{background:'#313846'}}
 		>
 			{
 				isActiveForm.tel && <FormTel />

@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
 import { Button } from 'antd'
 // import { motion } from "framer-motion"
-import { Link as LinkScroll } from 'react-scroll'
+// import { Link as LinkScroll } from 'react-scroll'
 import * as icons from '@ant-design/icons'
 import { DrawerComp } from '../../drawer/DrawerComp'
 import { Link } from 'react-router-dom'
 
 export const MenuMobil = ({ onClose }) => {
 	const [open, setOpen] = useState(false)
-
 	const [placement, setPlacement] = useState('')
 	const [title, setTitle] = useState('')
 	const [isActiveForm, setIsActiveForm] = useState({
@@ -31,9 +30,9 @@ export const MenuMobil = ({ onClose }) => {
 
 
 	return (
-		<div className=''>
-			<nav className='text-center'>
-				<ul className='h-[50vh] flex flex-col justify-between items-center text-lg cursor-pointer'>
+		<div className='h-full'>
+			<nav className='text-center h-full'>
+				<ul className='h-full flex flex-col justify-between items-center text-lg cursor-pointer'>
 					<li>
 						<Link to='/'
 							
@@ -43,17 +42,6 @@ export const MenuMobil = ({ onClose }) => {
 							Главная страница
 						</Link>
 					</li>
-					{/* <li>
-						<LinkScroll to='service'
-							smooth={true}
-							offset={-100}
-							duration={800}
-							className="cursor-pointer"
-							onClick={onClose}
-						>
-							Услуги
-						</LinkScroll>
-					</li> */}
 					<li>
 						<Link to='/uslugi/transformatornaya-podstantsiya'
 							className="cursor-pointer"
@@ -90,7 +78,7 @@ export const MenuMobil = ({ onClose }) => {
 					</li>
 					<li>
 						<Link to='/uslugi/avariinaya-sluzhba'
-							className="cursor-pointer text-orange-600"
+							className="cursor-pointer"
 							onClick={onClose}
 						>
 							Аварийная служба
@@ -98,7 +86,7 @@ export const MenuMobil = ({ onClose }) => {
 					</li>
 					<li>
 						<Link to='/otzyvy'
-							className="cursor-pointer text-orange-600"
+							className="cursor-pointer"
 							onClick={onClose}
 						>
 							Отзывы
@@ -106,7 +94,7 @@ export const MenuMobil = ({ onClose }) => {
 					</li>
 					<li>
 						<Link to='/kontakt'
-							className="cursor-pointer text-orange-600"
+							className="cursor-pointer"
 							onClick={onClose}
 						>
 							Контакты
@@ -133,10 +121,12 @@ export const MenuMobil = ({ onClose }) => {
 					</li>
 					<li className=''>
 						<Button
-							type='primary'
+							type='text'
 							ghost
+							style={{color:'rgb(234,88,12'}}
 						>
-							<a href='tel:80291466601'>
+							<a href='tel:80290000000'
+							>
 								<icons.PhoneOutlined className='rotate-90 animate-pulse' /><span className='uppercase ml-2'>Вызвать аварийную службу</span>
 							</a>
 						</Button>
