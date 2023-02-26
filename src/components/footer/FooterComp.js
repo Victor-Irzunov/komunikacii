@@ -86,9 +86,15 @@ export const FooterComp = () => {
               variants={adressAnimation}
               className='flex justify-between items-center'>
               <div className='text-lg font-extralight'>
-                <p className='mb-2'>г.Минск, Минская 100</p>
-                <p>contact.oo@mail.ru</p>
-                <a href='tel:8029'>+375 29 000-99-99</a>
+                <p className='mb-2'>г.Минск, Пономаренко 41</p>
+                <a
+                  href="mailto:brigady.by@gmail.com"
+                  title="Наша почта"
+                  className='mb-3'
+                >
+                  <p>brigady.by@gmail.com</p>
+                </a>
+                <a href='tel:80293613612'>+375 (33) 361-36-12</a>
               </div>
             </motion.div>
           </motion.div>
@@ -106,7 +112,7 @@ export const FooterComp = () => {
               hover:opacity-90
               "
             >
-              Copyright Ⓒ 2023. Created & Designed By <a href="https://vi-tech.by" className="text-gradient" rel="noreferrer" target="_blank">VI:TECH</a>. &nbsp;
+              Copyright Ⓒ 2023. Разработка и продвижение <a href="https://vi-tech.by" className="text-gradient" rel="noreferrer" target="_blank">VI:TECH</a>. &nbsp;
             </p>
           </div>
         </div>

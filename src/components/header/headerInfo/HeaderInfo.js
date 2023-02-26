@@ -8,7 +8,7 @@ import { ClockCircleOutlined, PhoneOutlined, ShakeOutlined, QuestionCircleOutlin
 import { useScreens } from '../../../constants/Constants'
 import { DrawerComp } from '../../drawer/DrawerComp'
 import { motion } from "framer-motion"
-import { yAnimation3} from '../../../constants/animation/AnimationConst'
+import { yAnimation3 } from '../../../constants/animation/AnimationConst'
 
 export const HeaderInfo = ({ setIsVisible }) => {
 	const screens = useScreens()
@@ -41,7 +41,7 @@ export const HeaderInfo = ({ setIsVisible }) => {
 								<div className='flex text-lg text-[#000]'>
 									<PhoneOutlined className='rotate-90 mr-3 text-2xl' />
 									<div className='flex items-end'>
-										<a href='tel:80290000000' className='text-2xl'>+375 29 000-00-00</a>
+										<a href='tel:80293613612' className='text-2xl'>+375 (33) 361-36-12</a>
 										<span className='ml-1.5 font-extralight'>A1</span>
 									</div>
 								</div>
@@ -54,15 +54,15 @@ export const HeaderInfo = ({ setIsVisible }) => {
 					</div>
 					:
 					<motion.div
-					initial="hidden"
-					whileInView="visible"
+						initial="hidden"
+						whileInView="visible"
 					>
 						<motion.div
 							className='flex flex-col 
 						justify-between items-center
 						 text-[#05d3ac] pt-24 pb-3 
 						 relative z-10 bg-[#313846]'
-						 variants={yAnimation3}
+							variants={yAnimation3}
 						>
 							<div className='flex text-lg items-center'>
 								<ClockCircleOutlined />
@@ -74,8 +74,9 @@ export const HeaderInfo = ({ setIsVisible }) => {
 							<div className='mt-2 mb-2'>
 								<div className='text-lg '>
 									<div className='flex items-end pl-7 text-white'>
-										<a href='tel:80290000000' className='text-2xl '>+375 29 000-00-00</a>
-										<span className='ml-1 font-extralight text-[15px]'>A1</span>
+										<a href='tel:80293613612' className='text-2xl'>+375 (33) 361-36-12
+											<span className='ml-2 font-extralight text-[12px]'>МТС</span>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -92,8 +93,11 @@ export const HeaderInfo = ({ setIsVisible }) => {
 
 							<div className='relative'>
 								<Button type='primary' className='mt-3' style={{ backgroundColor: '#fff' }}>
-									<a href='tel:80290000000' className=''>
-										<PhoneOutlined className='rotate-90 animate-pulse text-red-600' /><span className='uppercase text-red-600'> Аварийная бригада 24/7</span>
+									<a href='tel:80293613612'>
+										<PhoneOutlined className='rotate-90 animate-pulse text-red-600' />
+										<span className='uppercase text-red-600'>
+											{' '}Аварийная бригада 24/7
+										</span>
 									</a>
 								</Button>
 								<Tooltip placement="topRight" title='Выездная оперативная круглосуточная аварийная служба по ремонту электрооборудования.'>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useScreens } from '../../../constants/Constants'
-import { Affix, Button, Image } from 'antd'
+import { Affix, Button, Divider, Image } from 'antd'
 import { motion, AnimatePresence } from "framer-motion"
 import { ShakeOutlined, CalendarOutlined, MenuOutlined } from '@ant-design/icons'
 import { DrawerComp } from '../../drawer/DrawerComp'
@@ -144,9 +144,9 @@ export const HeaderMenu = ({ isVisible, setHover, hover }) => {
 										style={{ borderTop: '1px solid #ccc', zIndex: '100000' }}
 									>
 										<div className='container mx-auto px-10'>
-											<div className=' text-[#05d3ac] pt-10 text-sm border-t-white font-light'>
-												<ul className='h-full flex justify-between items-center text-sm cursor-pointer flex-wrap'>
-													<li className='mb-10'>
+											<div className=' text-[#05d3ac] pt-10 text-sm border-t-white font-light flex justify-between items-start'>
+												<ul className='h-full text-sm cursor-pointer'>
+													<li className='mb-5'>
 														<Link to='/uslugi/transformatornaya-podstantsiya'
 															className="cursor-pointe"
 															onClick={handleMouseLeave}
@@ -154,7 +154,7 @@ export const HeaderMenu = ({ isVisible, setHover, hover }) => {
 															Строительство и ремонт трансформаторных подстанций
 														</Link>
 													</li>
-													<li className='mb-10'>
+													<li className='mb-5'>
 														<Link to='/uslugi/liniya-elektroperedach'
 															onClick={handleMouseLeave}
 															className="cursor-pointer"
@@ -162,7 +162,7 @@ export const HeaderMenu = ({ isVisible, setHover, hover }) => {
 															Строительство и ремонт линии электропередач
 														</Link>
 													</li>
-													<li className='mb-10'>
+													<li className='mb-5'>
 														<Link to='/uslugi/elektrofizicheskie-izmereniya'
 															className="cursor-pointer"
 															onClick={handleMouseLeave}
@@ -170,7 +170,10 @@ export const HeaderMenu = ({ isVisible, setHover, hover }) => {
 															Проведение электрофизических измерений
 														</Link>
 													</li>
-													<li>
+												</ul>
+
+												<ul className='h-full text-sm cursor-pointer'>
+													<li className='mb-5'>
 														<Link to='/uslugi/prokladka-i-remont-kabelya'
 															className="cursor-pointer"
 															onClick={handleMouseLeave}
@@ -178,7 +181,7 @@ export const HeaderMenu = ({ isVisible, setHover, hover }) => {
 															Прокладка и ремонт кабеля
 														</Link>
 													</li>
-													<li>
+													<li className='mb-5'>
 														<Link to='/uslugi/podklyuchenie-elektrichestva'
 															className="cursor-pointer"
 															onClick={handleMouseLeave}
@@ -186,7 +189,7 @@ export const HeaderMenu = ({ isVisible, setHover, hover }) => {
 															Подключение электричества 0,4-10кВ
 														</Link>
 													</li>
-													<li>
+													<li className='mb-5'>
 														<Link to='/uslugi/proektirovanie-elektrosnabzheniya'
 															className="cursor-pointer"
 															onClick={handleMouseLeave}
@@ -194,7 +197,26 @@ export const HeaderMenu = ({ isVisible, setHover, hover }) => {
 															Разработка проекта на электроснабжение
 														</Link>
 													</li>
-													<li>
+												</ul>
+
+												<ul className='h-full text-sm cursor-pointer'>
+													<li className='mb-5'>
+														<Link to='/uslugi/obsluzhivanie'
+															className="cursor-pointer"
+															onClick={handleMouseLeave}
+														>
+															Оперативно-техническое обслуживание электроустановок 0,4-10кВ
+														</Link>
+													</li>
+													<li className='mb-5'>
+														<Link to='/uslugi/Podklyuchenie-ASKUE'
+															className="cursor-pointer"
+															onClick={handleMouseLeave}
+														>
+															Подключение АСКУЭ
+														</Link>
+													</li>
+													<li className='mb-5'>
 														<Link to='/uslugi/avariinaya-sluzhba'
 															className="cursor-pointer"
 															onClick={handleMouseLeave}
@@ -203,6 +225,8 @@ export const HeaderMenu = ({ isVisible, setHover, hover }) => {
 														</Link>
 													</li>
 												</ul>
+
+
 											</div>
 										</div>
 									</motion.div>)

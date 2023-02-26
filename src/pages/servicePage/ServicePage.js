@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Divider, Image, Tag } from 'antd'
+import { Divider, Image, Tag,FloatButton } from 'antd'
 import { InfoCircleTwoTone } from '@ant-design/icons'
 import { motion } from "framer-motion"
 import { titleAnimation, titleAnimation2, yAnimation } from '../../constants/animation/AnimationConst'
@@ -61,6 +61,7 @@ export const ServicePage = () => {
 
 	return (
 		<section className='pt-10'>
+			<FloatButton.BackTop />
 			{
 				data.map(el => {
 					return (
@@ -110,7 +111,7 @@ export const ServicePage = () => {
 
 											{el.list.map((elem, idx) => {
 												return (
-													<li className='mb-1' key={idx}>
+													<li className='mb-2' key={idx}>
 														{elem}
 													</li>
 												)
@@ -147,7 +148,7 @@ export const ServicePage = () => {
 													{
 														el.list2.map((item, i) => {
 															return (
-																<li className='mb-1' key={i}>
+																<li className='mb-2' key={i}>
 																	{item}
 																</li>
 															)
@@ -187,7 +188,7 @@ export const ServicePage = () => {
 													{
 														el.list2.map((item, i) => {
 															return (
-																<li className='mb-1' key={i}>
+																<li className='mb-2' key={i}>
 																	{item}
 																</li>
 															)

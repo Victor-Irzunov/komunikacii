@@ -3,7 +3,7 @@ import img2 from '../../images/service/2.webp'
 import img3 from '../../images/service/3.webp'
 import img4 from '../../images/service/4.webp'
 import img5 from '../../images/service/5.webp'
-// import img6 from '../../images/service/6.webp'
+import img6 from '../../images/service/19.webp'
 import img7 from '../../images/service/13.webp'
 import img8 from '../../images/service/15.webp'
 import img9 from '../../images/service/17.webp'
@@ -60,7 +60,7 @@ export const data = [
 		h2: 'Круглосуточная аварийная бригада',
 		name: 'Аварийная служба',
 		text: `Оперативно отправим бригаду для устранения аварии.`,
-		img: 'https://via.placeholder.com/370x180',
+		img: img6,
 		alt: '',
 		link: 'аварийная-служба'
 	},

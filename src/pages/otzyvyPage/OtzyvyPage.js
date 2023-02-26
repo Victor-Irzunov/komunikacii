@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Button, Popover, Rate, Avatar, Image } from 'antd'
+import { Button, Popover, Rate, Avatar, Image,FloatButton } from 'antd'
 import { ExclamationCircleOutlined, LineOutlined, UserOutlined } from '@ant-design/icons'
 import { FormOtzyvy } from '../../components/form/FormOtzyvy'
 import img1 from '../../images/otzyvy/1.webp'
@@ -22,6 +22,7 @@ export const OtzyvyPage = () => {
 
 	return (
 		<section className='py-12 w-full z-10 min-h-[60vh]' id='otzyvy'>
+			<FloatButton.BackTop />
 			<div className='container'>
 				<div className='text-center mb-12'>
 					<h2 className='text-4xl uppercase'>Наши<span className='text-black'> отзывы</span></h2>

@@ -93,6 +93,8 @@ export const MenuMobil = ({ onClose }) => {
 							Подключение электричества 0,4-10кВ
 						</Link>
 					</li>
+
+
 					<Divider style={{ marginTop: '7px', marginBottom: '7px' }} />
 					<li>
 						<Link to='/uslugi/proektirovanie-elektrosnabzheniya'
@@ -101,6 +103,32 @@ export const MenuMobil = ({ onClose }) => {
 							style={{ color: '#000' }}
 						>
 							Разработка проекта на электроснабжение
+						</Link>
+					</li>
+
+					
+					<Divider style={{ marginTop: '7px', marginBottom: '7px' }} />
+					<li>
+						<Link to='/uslugi/obsluzhivanie'
+							className="cursor-pointer"
+							onClick={onClose}
+							style={{ color: '#000' }}
+						>
+							Оперативно-техническое обслуживание электроустановок 0,4-10кВ
+						</Link>
+					</li>
+
+
+
+
+					<Divider style={{ marginTop: '7px', marginBottom: '7px' }} />
+					<li>
+						<Link to='/uslugi/Podklyuchenie-ASKUE'
+							className="cursor-pointer"
+							onClick={onClose}
+							style={{ color: '#000' }}
+						>
+							Подключение АСКУЭ
 						</Link>
 					</li>
 					<Divider style={{ marginTop: '7px', marginBottom: '7px' }} />
@@ -113,6 +141,7 @@ export const MenuMobil = ({ onClose }) => {
 							Услуга аварийной бригады
 						</Link>
 					</li>
+				
 					<Divider style={{ marginTop: '7px', marginBottom: '7px' }} />
 					<li>
 						<Link to='/otzyvy'
