@@ -47,9 +47,9 @@ export const HeaderInfo = ({ setIsVisible }) => {
 								</div>
 							</div>
 
-							<div className='flex flex-col items-center'>
-								<p className='text-sm text-[#000] mb-1 font-light'>Напишите нам</p>
-							</div>
+							{/* <div className='flex flex-col items-center'>
+								<p className='text-sm text-[#000] mb-1 font-light'></p>
+							</div> */}
 						</div>
 					</div>
 					:

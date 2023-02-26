@@ -14,3 +14,9 @@
 /* .ant-drawer-title{
 color: #05d3ac !important;
 } */
+.ant-drawer-body{
+padding-top:10px !important;
+}
+ul{
+margin-bottom: 0 !important;
+}

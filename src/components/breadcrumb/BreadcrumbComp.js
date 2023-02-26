@@ -3,18 +3,21 @@ import { useLocation, Link } from "react-router-dom"
 import { HomeOutlined } from '@ant-design/icons'
 import { Breadcrumb } from "antd"
 import CyrillicToTranslit from 'cyrillic-to-translit-js'
+import { useScreens } from "../../constants/Constants"
+
 const BreadCrumbComp = () => {
 	const cyrillicToTranslit = new CyrillicToTranslit()
 	const location = useLocation()
-
+	const screens = useScreens()
 
 	const breadCrumbView = () => {
+		
 		const { pathname } = location
 		const pathnames = pathname.split("/").filter((item) => item)
 		const capatilize = s => s.charAt(0).toUpperCase() + s.slice(1)
 		return (
 			// ${pathname === '/' && 'hidden'}
-			<div className={`container px-5 py-1`}>
+			<div className={`container px-5 ${screens.md ? 'pt-20': 'pt-4'}`}>
 				<Breadcrumb>
 					{
 						pathnames.length > 0

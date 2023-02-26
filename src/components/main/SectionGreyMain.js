@@ -4,7 +4,7 @@ import { titleAnimation2, titleAnimation } from '../../constants/animation/Anima
 
 export const SectionGreyMain = () => {
 	return (
-		<section className='bg-[#313846] text-white px-5 py-10'>
+		<section className='bg-[#313846] text-white px-5 py-10 mt-20'>
 			<motion.div
 				className=''
 				initial="hidden"

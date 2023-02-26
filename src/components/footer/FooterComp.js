@@ -106,7 +106,7 @@ export const FooterComp = () => {
               hover:opacity-90
               "
             >
-              Copyright Ⓒ 2000-2023. Created & Designed By <a href="https://vi-tech.by" className="text-gradient" rel="noreferrer" target="_blank">VI:TECH</a>. &nbsp;
+              Copyright Ⓒ 2023. Created & Designed By <a href="https://vi-tech.by" className="text-gradient" rel="noreferrer" target="_blank">VI:TECH</a>. &nbsp;
             </p>
           </div>
         </div>

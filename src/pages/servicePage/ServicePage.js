@@ -11,7 +11,7 @@ import {
 import {
 	useLocation,
 } from 'react-router-dom'
-import hours from '../../images/service/24-hours.svg'
+// import hours from '../../images/service/24-hours.svg'
 import { ModalComp } from '../../components/modal/ModalComp'
 
 export const ServicePage = () => {
@@ -78,7 +78,7 @@ export const ServicePage = () => {
 										{el.h1}
 									</motion.h1>
 									<motion.h2
-										className='text-gray-700 '
+										className='text-gray-700 font-light text-sm'
 										variants={titleAnimation2}
 									>
 										{el.h2} {' '}
@@ -116,7 +116,7 @@ export const ServicePage = () => {
 												)
 											})}
 										</ul>
-										<p className='text-xs text-gray-600 font-light'>
+										<p className='text-xs text-gray-600 font-light mt-10'>
 											<InfoCircleTwoTone /> Стоимость и сроки Вы можете узнать позвонив по телефону +375 (29) 000-00-00 либо отправив нам сообщение (кнопка ниже). Выполняем работы как под ключ так и частями. Оплата производится двумя способами: наличным и безналичным способам (с заключением договора).
 										</p>
 										<Tag
@@ -154,7 +154,7 @@ export const ServicePage = () => {
 														})
 													}
 												</ul>
-												<p className='text-xs text-gray-600 font-light'>
+												<p className='text-xs text-gray-600 font-light mt-10'>
 													<InfoCircleTwoTone /> Стоимость и сроки Вы можете узнать позвонив по телефону (указан выше) либо отправив нам сообщение (кнопка ниже). Выполняем работы как под ключ так и отдельными частями.
 												</p>
 												<Tag
@@ -194,7 +194,7 @@ export const ServicePage = () => {
 														})
 													}
 												</ul>
-												<p className='text-xs text-gray-600 font-light'>
+												<p className='text-xs text-gray-600 font-light mt-10'>
 													<InfoCircleTwoTone /> Стоимость и сроки Вы можете узнать позвонив по телефону (указан выше) либо отправив нам сообщение (кнопка ниже). Выполняем работы как под ключ так и отдельными частями.
 												</p>
 

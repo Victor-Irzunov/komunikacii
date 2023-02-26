@@ -1,8 +1,8 @@
 import './App.css'
 import { Routes, Route, BrowserRouter, Navigate } from 'react-router-dom'
-import React, { createContext, useState, useEffect } from 'react'
-import { Spin, ConfigProvider } from 'antd'
-import { observer } from "mobx-react-lite"
+import React, { createContext, useState } from 'react'
+import { ConfigProvider } from 'antd'
+// import { observer } from "mobx-react-lite"
 import BreadCrumbComp from './components/breadcrumb/BreadcrumbComp'
 import { FooterComp } from './components/footer/FooterComp'
 import Scroll from './hoc/Scroll'
@@ -24,7 +24,11 @@ export const Context = createContext(null)
 
 function App() {
   const [dataApp] = useState(new DataStore())
+  const [hover, setHover] = useState(false)
 
+  const handleMouseLeave = () => {
+		setHover(false)
+	}
 
   return (
     <ConfigProvider
@@ -44,10 +48,11 @@ function App() {
         <StyleProvider hashPriority="high">
           <BrowserRouter>
             <div className="app bg-[#f8f8f8]">
-              <div className=''>
-                <Header />
-
-                <main className=''>
+              <div >
+                <Header setHover={setHover} hover={hover} />
+                <main className=''
+                  onMouseEnter={handleMouseLeave}
+                >
                   <BreadCrumbComp />
                   <Scroll>
                     <Routes>
@@ -60,11 +65,9 @@ function App() {
                     </Routes>
                   </Scroll>
                 </main>
-
               </div>
               <FooterComp />
             </div>
-
           </BrowserRouter>
         </StyleProvider>
       </Context.Provider>

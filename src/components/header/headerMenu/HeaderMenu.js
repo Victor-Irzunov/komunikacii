@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ShakeOutlined, CalendarOutlined, MenuOutlined } from '@ant-design/icons'
 import { DrawerComp } from '../../drawer/DrawerComp'
 import logo from '../../../images/logo/logo.png'
-import { Link as LinkScroll } from 'react-scroll'
-import { Link, NavLink } from 'react-router-dom'
+// import { Link as LinkScroll } from 'react-scroll'
+import { Link } from 'react-router-dom'
 
-export const HeaderMenu = ({ isVisible }) => {
+export const HeaderMenu = ({ isVisible, setHover, hover }) => {
 	const [isAffix, setIsAffix] = useState(false)
 	const [placement, setPlacement] = useState('')
 	const [title, setTitle] = useState('')
@@ -19,8 +19,16 @@ export const HeaderMenu = ({ isVisible }) => {
 	})
 	const screens = useScreens()
 	const [open, setOpen] = useState(false)
+	// const [hover, setHover] = useState(false)
 
-	
+	const handleMouseLeave = () => {
+		setHover(false)
+	}
+	const handleMouseEnter = () => {
+		setHover(true)
+	}
+
+
 	const showDrawer = (position, title, str) => {
 		setOpen(true)
 		setPlacement(position)
@@ -45,7 +53,7 @@ export const HeaderMenu = ({ isVisible }) => {
 						onChange={(affixed) => setIsAffix(affixed)}
 					>
 						<div
-							className={isAffix ? 'relative pt-4 pb-4 bg-[#313846]' : `relative pt-4 pb-4 bg-[#313846] shadow-xl`}
+							className={isAffix ? 'absolute pt-4 pb-4 bg-[#313846] w-full' : `absolute pt-4 pb-4 bg-[#313846] shadow-xl w-full`}
 						>
 							<div className='container mx-auto px-10'>
 								<nav>
@@ -53,92 +61,155 @@ export const HeaderMenu = ({ isVisible }) => {
 										className='flex justify-between 
 										items-center text-lg font-light
 										text-[#05d3ac] cursor-pointer
-										 z-50 mb-0'
+										 mb-0'
 									>
 										<li>
-											<LinkScroll to='main'
+											<Link to='/'
 												smooth={true}
 												offset={-100}
 												duration={800}
 												className="cursor-pointer text-[#05d3ac]"
+												onMouseEnter={handleMouseLeave}
 											>
 												Главная
-											</LinkScroll>
+											</Link>
 										</li>
 										<li>
-											<LinkScroll to='service'
+											<Link to='#'
 												smooth={true}
 												offset={-100}
 												duration={800}
 												className="cursor-pointer"
+												onMouseEnter={handleMouseEnter}
 											>
 												Услуги
-											</LinkScroll>
+											</Link>
 										</li>
+
 										<li>
-											<LinkScroll to='price'
+											<Link to='/otzyvy'
 												smooth={true}
 												offset={-100}
 												duration={800}
 												className="cursor-pointer"
-											>
-												Цены
-											</LinkScroll>
-										</li>
-										<li>
-											<LinkScroll to='galereya'
-												smooth={true}
-												offset={-100}
-												duration={800}
-												className="cursor-pointer"
-											>
-												Галерея
-											</LinkScroll>
-										</li>
-										<li><LinkScroll to='vopros'
-											smooth={true}
-											offset={-100}
-											duration={800}
-											className="cursor-pointer"
-										>
-											Вопросы
-										</LinkScroll></li>
-										<li>
-											<LinkScroll to='otzyvy'
-												smooth={true}
-												offset={-100}
-												duration={800}
-												className="cursor-pointer"
+												onMouseEnter={handleMouseLeave}
 											>
 												Отзывы
-											</LinkScroll>
+											</Link>
 										</li>
 										<li>
-											<LinkScroll to='contact'
+											<Link to='/kontakt'
 												smooth={true}
 												offset={-100}
 												duration={800}
 												className="cursor-pointer"
+												onMouseEnter={handleMouseLeave}
 											>
 												Контакты
-											</LinkScroll>
+											</Link>
 										</li>
 										<li className='ml-48'>
 										</li>
 										<li>
-											<Button type='primary' ghost onClick={() => showDrawer('top', 'Заказать звонок', 'tel')}>
+											<Button
+												type='primary'
+												ghost
+												onMouseEnter={handleMouseLeave}
+												onClick={() => showDrawer('top', 'Заказать звонок', 'tel')}>
 												<ShakeOutlined /> Заказать звонок
 											</Button>
 										</li>
 										<li>
-											<Button type='primary' ghost onClick={() => showDrawer('right', 'Заказать на дату', 'date')}>
+											<Button
+												type='primary'
+												onMouseEnter={handleMouseLeave}
+												ghost onClick={() => showDrawer('right', 'Заказать на дату', 'date')}>
 												<CalendarOutlined /> Заказать на дату
 											</Button>
 										</li>
 									</ul>
 								</nav>
 							</div>
+
+
+							<AnimatePresence>
+								{
+									hover &&
+									(<motion.div
+										initial={{ heigth: 0, opacity: 0 }}
+										animate={{ height: 'auto', opacity: 1 }}
+										exit={{ height: 0, opacity: 0 }}
+										transition={{ duration: 0.5, delay: 0.1 }}
+										className='w-full mt-2'
+										style={{ borderTop: '1px solid #ccc', zIndex: '100000' }}
+									>
+										<div className='container mx-auto px-10'>
+											<div className=' text-[#05d3ac] pt-10 text-sm border-t-white font-light'>
+												<ul className='h-full flex justify-between items-center text-sm cursor-pointer flex-wrap'>
+													<li className='mb-10'>
+														<Link to='/uslugi/transformatornaya-podstantsiya'
+															className="cursor-pointe"
+															onClick={handleMouseLeave}
+														>
+															Строительство и ремонт трансформаторных подстанций
+														</Link>
+													</li>
+													<li className='mb-10'>
+														<Link to='/uslugi/liniya-elektroperedach'
+															onClick={handleMouseLeave}
+															className="cursor-pointer"
+														>
+															Строительство и ремонт линии электропередач
+														</Link>
+													</li>
+													<li className='mb-10'>
+														<Link to='/uslugi/elektrofizicheskie-izmereniya'
+															className="cursor-pointer"
+															onClick={handleMouseLeave}
+														>
+															Проведение электрофизических измерений
+														</Link>
+													</li>
+													<li>
+														<Link to='/uslugi/prokladka-i-remont-kabelya'
+															className="cursor-pointer"
+															onClick={handleMouseLeave}
+														>
+															Прокладка и ремонт кабеля
+														</Link>
+													</li>
+													<li>
+														<Link to='/uslugi/podklyuchenie-elektrichestva'
+															className="cursor-pointer"
+															onClick={handleMouseLeave}
+														>
+															Подключение электричества 0,4-10кВ
+														</Link>
+													</li>
+													<li>
+														<Link to='/uslugi/proektirovanie-elektrosnabzheniya'
+															className="cursor-pointer"
+															onClick={handleMouseLeave}
+														>
+															Разработка проекта на электроснабжение
+														</Link>
+													</li>
+													<li>
+														<Link to='/uslugi/avariinaya-sluzhba'
+															className="cursor-pointer"
+															onClick={handleMouseLeave}
+														>
+															Услуга аварийной бригады
+														</Link>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</motion.div>)
+								}
+							</AnimatePresence>
 						</div>
+
 					</Affix>
 					:
 					<>
