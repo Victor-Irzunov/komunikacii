@@ -27,7 +27,7 @@ export const ContactPage = () => {
 			</div>
 
 			<div className='mt-10'>
-				<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A7e323f30bc6aed08c1350f3e11e1b044fec4886e2ab6604d88ce6cae20edca48&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
+				<iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A62d6b997fc3d22af66bcfd2efa225700a1cec852805fca5f3b01359cd9237b41&amp;source=constructor" width="100%" height="400" frameborder="0"></iframe>
 			</div>
 		</section>
 	)
